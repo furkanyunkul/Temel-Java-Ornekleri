@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		//while yönetemi ile
+    
+		int sayac=0;
+		int buyukSayi=-1;
+		System.out.println("Sayilari girin:");
+		Scanner scanner=new Scanner(System.in);
+		while(true) {
+			int sayi=scanner.nextInt();
+			if(sayi>buyukSayi) {
+				buyukSayi=sayi;
+				sayac=1;
+			}
+			else if(sayi==buyukSayi) {
+				sayac=sayac+1;
+			}
+			if(sayi==0) {
+				break;
+			}		
+		}
+
+		System.out.println("En buyuk sayi "+buyukSayi+" toplam "+sayac+" kere girilmis.");
+	}
+}
