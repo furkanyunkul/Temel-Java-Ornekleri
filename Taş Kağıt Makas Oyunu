@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+
+public class Main {
+	
+	public static int pcRandom() {
+		int a[]= {0,1,2};
+		int random=(int)(Math.random()*a.length);
+		return random;	
+	}
+	
+	public static void main(String[] args) {
+		int pcSecim=pcRandom();
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Birini seciniz\r\n" + 
+				"Tas (0), Makas (1), Kagit (2):");
+		int secim=scanner.nextInt();
+		System.out.println(secim);
+
+		if(pcSecim==2 && secim==0) {
+			System.out.println("Bilgisayar kagit secmisti,kagit tasi kaplar kaybettiniz");
+		}
+		else if (pcSecim==2 && secim==1) {
+			System.out.println("Bilgisayar kagit secmisti,makas kagiti keser kazandiniz");
+		}
+		else if (pcSecim==2 && secim==2) {
+			System.out.println("Bilgisayar kagit secmisti,berabere");
+		}
+		else if (pcSecim==1 && secim==0) {
+			System.out.println("Bilgisayar makas secmisti,tas makasi ezer kazandiniz");
+		}
+		else if (pcSecim==1 && secim==1) {
+			System.out.println("Bilgisayar makas secmisti,berabere");
+		}
+		else if (pcSecim==1 && secim==2) {
+			System.out.println("Bilgisayar makas secmisti,makas kagiti keser kaybettiniz");
+		}
+		else if (pcSecim==0 && secim==0) {
+			System.out.println("Bilgisayar tas secmisti,berabere");
+		}
+		else if (pcSecim==0 && secim==1) {
+			System.out.println("Bilgisayar tas secmisti,tas makasi ezer kaybettiniz");
+		}
+		else if (pcSecim==0 && secim==2) {
+			System.out.println("Bilgisayar tas secmisti,kagit tasi kaplar kazandiniz");
+		}
+		else {
+			System.out.println("Yanlis bilgi girildi");
+		}
+	}
+}
