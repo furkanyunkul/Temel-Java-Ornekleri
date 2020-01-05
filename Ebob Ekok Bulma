@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Main {
+	public static int ebob(int a,int b) {
+		int ebob=1;
+		if(b>a) {
+			int z=0;
+			z=a;
+			a=b;
+			b=z;			
+		}
+		for (int i=1;i<=a && i<=b;i++) {
+			if((a%i==0 )&& ( b%i==0)) {
+				ebob=i;
+			}
+		}
+		return ebob;
+	}
+	
+public static int ekok(int a,int b) {
+	int ekok=1;
+	int ebob=1;
+	if(b>a) {
+		int z=0;
+		z=a;
+		a=b;
+		b=z;			
+	}
+	for (int i=1;i<=a && i<=b;i++) {
+		if((a%i==0 )&& ( b%i==0)) {
+			ebob=i;
+		}
+	}
+	a=a/ebob;
+	b=b/ebob;
+	ekok=ebob*a*b;
+	return ekok;	
+}
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("sayi1:");
+		int sayi1=scanner.nextInt();
+		System.out.println("sayi2:");
+		int sayi2=scanner.nextInt();
+		int z=ebob(sayi1,sayi2);
+		System.out.println("ebob:"+z);
+		int z2=ekok(sayi1,sayi2);
+		System.out.println("ekok:"+z2);
+		scanner.close();
+	}	
+}
