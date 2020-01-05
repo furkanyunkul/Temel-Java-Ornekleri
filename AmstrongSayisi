@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("sayi:");
+		int sayi=scanner.nextInt();
+		int basamak=0;
+		int temp=sayi;
+		int temp2=sayi;
+		double toplam=0;
+		
+		while(temp>0) {
+		
+		temp=temp/10;
+		basamak=basamak+1;
+		
+	}
+		while(temp2>0) {			
+			toplam=toplam+Math.pow(temp2%10, basamak);
+			temp2=temp2/10;
+		}
+		System.out.println(basamak);
+		System.out.println(toplam);
+		if(toplam==sayi) {
+			System.out.println(sayi+" sayisi amstrongtur");
+		}
+		else {
+			System.out.println(sayi+" sayisi amstrongt değildir");
+		}
+	}
+}
