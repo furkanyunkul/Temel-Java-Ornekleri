@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		int tIsbn=0;
+		Scanner scanner =new Scanner(System.in);
+		System.out.println("Sayi:");
+		String sayi=scanner.nextLine();
+		int sayiTemp=Integer.parseInt(sayi);
+		
+		for(int i=9;i>0;i--) {
+			tIsbn=tIsbn+i*(sayiTemp%10);
+			sayiTemp=sayiTemp/10;
+		}
+		int sonuc=tIsbn%11;
+		if(sonuc==10) {
+			System.out.println("ISBN -10 degeri :"+sayi+"X");
+		}
+		else {
+			System.out.println("ISBN -10 degeri :"+sayi+sonuc);
+		}
+	}
+}
