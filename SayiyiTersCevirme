@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("sayi");
+		int sayi=scanner.nextInt();
+		int sayiTem=sayi;
+		String sSayi=Integer.toString(sayi);
+		int basamak=sSayi.length();
+		double yeniSayi=0;
+		int kalan=0;
+		int sayac=1;
+		for(int i=basamak;i>0;i--) {
+			kalan=sayi%10;
+			sayi=sayi/10;
+			yeniSayi=yeniSayi+kalan*Math.pow(10,i-1);	
+		}
+		int yeniSayi2=(int)yeniSayi;
+		System.out.println(yeniSayi2);
+	}
+}
