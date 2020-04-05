@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("kenar1:");
+		int a=scanner.nextInt();
+		System.out.println("kenar2:");
+		int b=scanner.nextInt();
+		double hipotenus=Math.sqrt(a*a+b*b);
+		System.out.println("Hiponetus:"+hipotenus);
+		
+	}
+
+}
