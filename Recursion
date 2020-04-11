@@ -1,0 +1,119 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("sayi");
+		int sayi=scanner.nextInt();
+		
+		System.out.println("Loop yönetemi ile");
+		loopPrintStars(sayi);
+		System.out.println("");
+		System.out.println("----------------");
+		System.out.println("Recursion ile");
+		recursionPrintStars(sayi);
+		System.out.println("Loop yönetemi ile faktoriel");
+		System.out.println(loopFactoriel(sayi));
+		System.out.println("Recursion yönetemi ile faktoriel");
+		System.out.println(recursionFaktoriel(sayi));
+		System.out.println("Loop yönetemi ile fibonacci");
+		System.out.println(fibonacci(sayi));
+		System.out.println("Recursion yönetemi ile fibonacci");
+		System.out.println(recursionFibonacci(sayi));
+		System.out.println("Recursion myster");
+		int n=648;
+		System.out.println(myster(n));
+		System.out.println(myster2(n));
+	}
+	
+	public static void loopPrintStars(int n) {
+		for(int i=0;i<n;i++) {
+			System.out.print("*");
+		}
+	}
+	/*Recursion yöntem 1*/
+	public static void recursionPrintStars(int n) {
+		if(n==1) {
+			System.out.println("*");
+		}
+		else {
+			System.out.print("*");
+			recursionPrintStars(n-1);
+		}
+	}
+	/*Recursion yöntem 1*/
+	public static void recursionPrintStarsV2(int n) {
+		if(n==0) {
+			System.out.println();
+		}
+		else {
+			System.out.print("*");
+			recursionPrintStars(n-1);
+		}
+	}
+	
+	public static int loopFactoriel(int n) {
+		int factoriel=1;
+		for(int i=1;i<=n;i++) {
+			factoriel=factoriel*i;
+		}
+		return factoriel;
+	}
+	
+	public static int recursionFaktoriel(int n) {
+		if(n==0) {
+			return(1);
+		}
+		else {
+			return(n*recursionFaktoriel(n-1));
+		}
+	}
+	
+	public static int fibonacci(int n) {
+		if(n==0 || n==1) {
+			return n;
+		}
+		else {
+			int p1=0;
+			int p2=1;
+			int temp=0;
+			for(int i=2;i<=n;i++) {
+				temp=p1+p2;
+				p1=p2;
+				p2=temp;
+			}
+			return p2;
+		}
+	}
+	
+	public static int recursionFibonacci(int n) {
+		if(n<2) {
+			return n;
+		}
+		else {
+			return (recursionFibonacci(n-2)+recursionFibonacci(n-1));
+		}
+	}
+	
+	public static int myster(int n) {
+		if(n<10) {
+			return n;
+		}else {
+			int a=n/10;
+			int b=n%10;
+			return myster(a+b);
+		}
+	}
+	
+	public static int myster2(int n) {
+		if(n<10) {
+			return(10*n)+n;
+		}
+		else {
+			int a=myster2(n/10);
+			int b=myster2(n%10);
+			return (100*a)+b;
+		}
+	}
+	
+}
