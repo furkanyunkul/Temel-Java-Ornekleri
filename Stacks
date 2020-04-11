@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Stack {
+	private int[] items;
+	private int top;
+	public Stack (int capacity) {
+		items=new int[capacity];
+		top=-1;
+	}
+	public boolean isEmpty() {
+		return top==-1;
+	}
+	public boolean isFull() {
+		return top==items.length-1;
+	}
+	public int pop() {
+		if(!isEmpty()) {
+			return items[top--];
+		}
+		return 0;
+	}
+	public void push(int sayi) {
+		top++;
+		items[top]=sayi;
+	}
+	
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Kapasite");
+		int capacity=scanner.nextInt();
+		Stack stack=new Stack(capacity);
+		stack.push(10);
+		stack.push(15);
+		stack.push(25);
+		stack.push(35);
+		System.out.println("silinen : "+ stack.pop());
+		stack.push(10);
+		stack.push(15);
+		stack.push(55);
+		System.out.println("silinen : "+ stack.pop());
+		System.out.println("silinen : "+ stack.pop());
+		System.out.println("silinen : "+ stack.pop());
+	}
+	
+}
