@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class Queue {
+	private int [] items;
+	private int first;
+	private int n;
+	public Queue (int capacity) {
+		items=new int [capacity];
+		first=-1;
+		n=0;
+	}
+	
+    public boolean isEmpty() {
+        return n == 0;
+    }
+    
+    public boolean isFull() {
+        return n == items.length;
+    }
+    public int dequeue() {
+    	if(!isEmpty()){
+            int temp = items[first++];
+            n--;
+            if(first==items.length)
+                first=0;
+            if(n==0)
+                first=-1;
+              return temp;
+    	}
+    	else return 0;
+    }
+    
+    public void enqueue(int sayi) {
+    	 if(!isFull()) {
+    		 if(n==0) {
+    			 first++;
+    			 items[first]=sayi;
+    		 }
+    		 else {
+    			 items[(first+n)%items.length] = sayi;
+    		 }
+    		 n++;	 
+    	 } 
+    }
+    
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Kapasite");
+		int capacity=scanner.nextInt();
+		Queue queue=new Queue(capacity);
+		queue.enqueue(15);
+		queue.enqueue(25);
+		queue.enqueue(35);
+		queue.enqueue(45);
+		System.out.println("silinen : "+ queue.dequeue());
+		System.out.println("silinen : "+ queue.dequeue());
+		queue.enqueue(55);
+		queue.enqueue(65);
+		System.out.println("silinen : "+ queue.dequeue());
+		System.out.println("silinen : "+ queue.dequeue());
+		System.out.println("silinen : "+ queue.dequeue());
+	}
+}
